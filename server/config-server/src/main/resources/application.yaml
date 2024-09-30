@@ -1,0 +1,38 @@
+server:
+    port: 8888
+spring:
+    application:
+        name: config
+    cloud:
+        config:
+            server:
+                encrypt:
+                    enabled: false
+                git:
+                    uri: git@github.com:parkjungkwan/paris-paranmanzang-secret.git
+                    default-label: main
+                    ignoreLocalSshSettings: true
+                    strictHostKeyChecking: false
+                    hostKey: # ssh-keyscan 명령어로 확인
+                    hostKeyAlgorithm: # ssh-keyscan 명령어로 확인
+                    privateKey: | 
+                                -----BEGIN OPENSSH PRIVATE KEY-----
+                                
+                                -----END OPENSSH PRIVATE KEY-----
+management:
+    endpoints:
+        web:
+            exposure:
+                include: refresh
+    endpoint:
+        shutdown:
+            enabled: true
+        health:
+            show-details: always
+encrypt:
+    key: my-secret
+
+# 그 외에 설정 파일이 있는 위치와 디렉토리 매칭
+# uri: 설정파일이 있는 깃 주소
+# default-label: 깃 주소의 브랜치 이름
+# search-paths: 설정 파일들을 찾을 경로
