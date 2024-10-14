@@ -1,10 +1,7 @@
-server:
-    port: 9002
-
 spring:
-    application:
-        name: ftp-service
-    profiles:
-        active: local
-    config:
-        import: optional:configserver:http://localhost:8888
+  application:
+    name: ftp-service
+  profiles:
+    active: local
+  config:
+    import: optional:configserver:http://localhost:8888

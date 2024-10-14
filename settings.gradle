@@ -1,5 +1,4 @@
 rootProject.name = 'biday'
-
 include 'server:config-server'
 include 'server:eureka-server'
 include 'server:gateway-server'
